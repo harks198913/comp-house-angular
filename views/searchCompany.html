@@ -1,1 +1,25 @@
-<p>Test</p>
+<div class="container" ng-controller="SearchCompanyCtrl as search">
+	<form name="search.searchCompanyForm" ng-submit="search.searchCompany()">
+		<div class="form-group">
+		    <label for="company">Company name or number: </label>
+		    <input type="input" class="form-control" id="company" placeholder="Company name or number" required ng-model="search.searchCompanyData.companyName">
+		    <input type="submit" class="hiddenSubmit" />
+	  	</div>
+	</form>
+	
+	<div ng-if="search.searchInfo.length > 0">
+		<table class="table table-striped">
+			<thead>
+				<th>Company name</th>
+				<th>Company number</th>
+			</thead>
+			<tbody ng-repeat="company in search.searchInfo">
+				<tr ng-click="search.viewDetails(company.company_number)">
+					<td>{{ company.title }}</td>
+					<td>{{ company.company_number }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	{{ search.companyDetails.accounts.next_due }}
+</div>

@@ -1,0 +1,11 @@
+.header {
+	height:80px;
+	background-color: #F0F0F0;
+}
+
+.hiddenSubmit {
+	width:1px;
+	height:1px;
+	position:absolute;
+	left:-9999px;
+}
